@@ -10,12 +10,18 @@ pub fn main() {
 }
 
 pub fn format_number_test() {
-  display.format_number(0) |> should.equal("0")
-  display.format_number(100) |> should.equal("100")
-  display.format_number(999) |> should.equal("999")
-  display.format_number(1000) |> should.equal("1,000")
-  display.format_number(1_350_000) |> should.equal("1,350,000")
-  display.format_number(1_000_000) |> should.equal("1,000,000")
+  display.format_number(0)
+  |> should.equal("0")
+  display.format_number(100)
+  |> should.equal("100")
+  display.format_number(999)
+  |> should.equal("999")
+  display.format_number(1000)
+  |> should.equal("1,000")
+  display.format_number(1_350_000)
+  |> should.equal("1,350,000")
+  display.format_number(1_000_000)
+  |> should.equal("1,000,000")
 }
 
 pub fn format_search_results_test() {
@@ -36,9 +42,15 @@ pub fn format_search_results_test() {
     ),
   ]
   let result = display.format_search_results(items, "dragon")
-  result |> string.contains("Found 2 items") |> should.be_true
-  result |> string.contains("Dragon scimitar") |> should.be_true
-  result |> string.contains("Dragon longsword") |> should.be_true
+  result
+  |> string.contains("Found 2 items")
+  |> should.be_true
+  result
+  |> string.contains("Dragon scimitar")
+  |> should.be_true
+  result
+  |> string.contains("Dragon longsword")
+  |> should.be_true
 }
 
 pub fn format_item_price_test() {
@@ -58,8 +70,16 @@ pub fn format_item_price_test() {
       low_time: Some(0),
     )
   let result = display.format_item_price(item, price)
-  result |> string.contains("Abyssal whip") |> should.be_true
-  result |> string.contains("1,350,000 gp") |> should.be_true
-  result |> string.contains("1,340,000 gp") |> should.be_true
-  result |> string.contains("Members:    Yes") |> should.be_true
+  result
+  |> string.contains("Abyssal whip")
+  |> should.be_true
+  result
+  |> string.contains("1,350,000 gp")
+  |> should.be_true
+  result
+  |> string.contains("1,340,000 gp")
+  |> should.be_true
+  result
+  |> string.contains("Members:    Yes")
+  |> should.be_true
 }

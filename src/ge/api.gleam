@@ -33,10 +33,7 @@ pub fn fetch_latest(item_id: Int) -> Result(Price, String) {
   case httpc.send(req) {
     Ok(resp) -> {
       let decoder =
-        dynamic.field(
-          "data",
-          dynamic.dict(dynamic.string, price_decoder()),
-        )
+        dynamic.field("data", dynamic.dict(dynamic.string, price_decoder()))
       case json.decode(from: resp.body, using: decoder) {
         Ok(data) -> {
           case dict.get(data, int.to_string(item_id)) {

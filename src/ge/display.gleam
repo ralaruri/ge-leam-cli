@@ -42,11 +42,7 @@ pub fn format_item_price(item: Item, price: Price) -> String {
 pub fn format_search_results(items: List(Item), query: String) -> String {
   let count = list.length(items)
   let header =
-    "Found "
-    <> int.to_string(count)
-    <> " items matching \""
-    <> query
-    <> "\":\n"
+    "Found " <> int.to_string(count) <> " items matching \"" <> query <> "\":\n"
   let entries =
     list.map(items, fn(item) {
       "  " <> item.name <> " (ID: " <> int.to_string(item.id) <> ")"
